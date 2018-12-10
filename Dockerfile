@@ -12,7 +12,7 @@ RUN dotnet restore tests/tests.csproj
 # copy src
 COPY . .
 
-# test
+# test added ENV to inform teamcity we're running 
 ENV TEAMCITY_PROJECT_NAME=fake
 RUN dotnet test tests/tests.csproj
 
