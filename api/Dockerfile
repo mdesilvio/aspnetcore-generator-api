@@ -11,7 +11,7 @@ RUN dotnet publish -o /publish
 
 # Runtime Image Stage
 #FROM microsoft/aspnetcore:2
-FROM microsoft/dotnet:2.2-aspnetcore-runtime AS runtime
+FROM microsoft/dotnet:2.2-runtime AS runtime
 WORKDIR /publish
 COPY --from=build-env /publish .
 ENTRYPOINT ["dotnet", "api.dll"]
