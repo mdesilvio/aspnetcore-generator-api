@@ -3,11 +3,11 @@ version: '3.1'
 services:
   generator:
     image: my-registry:55000/gen:ci-${GENERATOR_BUILD_NUMBER-10}
-    #ports:
+    ports:
       - "8080:80"
   mail:
     image: mailhog/mailhog
-    #ports:
+    ports:
       - "8025:8025"
   integration:
     image: my-registry:55000/gen:integration-${BUILD_NUMBER-10}
